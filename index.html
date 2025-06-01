@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Robot Task Planning</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Robot Task Planning</h1>
+            <div class="is-size-5 publication-authors">
+            </div>
+            <div class="buttons is-centered" style="margin-top: 1.5em;">
+            <a class="button has-text-white has-background-black is-rounded" href="">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper</span>
+            </a>
+            <a class="button has-text-white has-background-black is-rounded" href="">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+            <a class="button has-text-white has-background-black is-rounded" href="">
+              <span class="icon"><i class="fas fa-database"></i></span>
+              <span>Data</span>
+            </a>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/UniDomain Video.mp4" type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1em;">
+        A teaser video introducing <b>UniDomain</b>.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- visualization  -->
+<section class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <figure>
+      <img src="static/images/universe_domain.png" alt="Visualization of Unified Domain" style="max-width: 100%;">
+      <figcaption class="has-text-justified" style="margin-top: 0.5em;">
+        <b>Visualization of our pre-trained unified domain,</b> with 3,137 operator nodes (green) and
+        2,875 predicate nodes (purple).
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robotic task planning in real-world environments requires reasoning over implicit constraints from language and vision. 
+            While LLMs and VLMs offer strong priors, they struggle with long-horizon structure and symbolic grounding. 
+            Existing methods that combine LLMs with symbolic planning often rely on handcrafted or narrow domains, limiting generalization. 
+            We propose <b>UniDomain</b>, a framework that pre-trains a PDDL domain from robot manipulation demonstrations and applies it for online robotic task planning. 
+            It extracts <i>single domains</i> from <b>12,393</b> manipulation videos to form an <i>all-domain</i> set with <b>3137</b> operators, <b>2875</b> predicates, and <b>16,481</b> causal edges. 
+            Given a target class of tasks, it retrieves relevant atomics from the all-domain set and systematically fuses them into high-quality <i>meta-domain</i> to support compositional generalization in planning. 
+            Experiments on diverse real-world tasks show that <b>UniDomain</b> solves complex, unseen tasks in a zero-shot manner, achieving up to <b>58%</b> higher task success and <b>160%</b> improvement in plan optimality over state-of-the-art LLM and LLM-PDDL baselines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+  <!-- Paper Introduction -->
+<section class="section hero is-small">  
+
+<div class="hero-body">
+  <div class="container ">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <figure>
+            <img src="static/images/uni-domain-overview.png" alt="UniDomain Overview">
+            <figcaption>
+              <b>Overview of UniDomain.</b> In the first phase, <i>Domain Pretraining</i>, atomic PDDL domains are extracted
+              from visual-language robot demonstrations using keyframe extraction (a), VLM-based
+              domain construction, and LLM-based closed-loop refinement (b). These domains collectively
+              form a unified domain capturing broad manipulation knowledge. In the second phase, <i>Domain
+              Fusion</i> (c), task-class-relevant atomic domains are retrieved and hierarchically merged into a
+              compact meta-domain by aligning functionally-overlapping predicates and operators. In the final
+              phase, <i>Online Planning</i>, a task instruction and scene image are used to construct a grounded PDDL
+              problem (d), which is solved with a classical planner (e) using the fused meta-domain
+              to generate executable plans (f).
+            </figcaption>
+          </figure>
+
+          <p>
+            Our main contributions of this work include:
+          </p>
+
+          <ul>
+            <li> The first framework to pre-train a unified PDDL domain for robotics from large-scale, real-world demonstrations. </li>
+            <li> A novel LLM-based domain fusion method for combining small, disconnected PDDL domains into a coherent and compact meta-domain thus support compositional generalization. </li>
+            <li> A novel online task planner that applies the fused meta-domain to solve general, unseen tasks through VLM-grounded PDDL planning. </li>
+          </ul>
+
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Image carousel -->
+<section class="section hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <!-- 第一部分：Comparison Results -->
+            <h2 class="title is-3">Comparison Results</h2>
+            <p>
+              The evaluation tasks span 4 unseen task domains: BlockWorld, Desktop, Kitchen, and Combination. There are 100 tasks in total. We compare UniDomain against two categories of methods. The first three methods utilize LLMs or VLMs as planners, while the latter three approaches integrate LLMs with PDDL planning.
+            </p>
+
+            <ul>
+              <li> Code-as-Policies: Directly generates executable Python-style plans from language instructions. </li>
+              <li> ReAct: Improves robustness through closed-loop reasoning with feedback. </li>
+              <li> VLM-CoT: Applies chain-of-thought prompting in a zero-shot vision-language setting. </li>
+              <li> ISR-LLM: Translates instructions into PDDL specifications and iteratively refines plans with validator feedback.</li>
+              <li> VLM-PDDL: Grounds scene and language into symbolic specifications and plans with classical solvers.</li>
+              <li> BoN-iVML: Generates an initial PDDL domain via Best-of-N sampling, refines it with verbalized feedback, and then constructs the problem file for planning.</li>
+            </ul>
+
+            <figure>
+              <img src="static/images/baseline.jpg" alt="Comparison results of UniDomain and baselines">
+              <figcaption>
+                Comparison results of <b>UniDomain</b> and state-of-the-art methods on unseen evaluation tasks:
+                (a) success rates ↑, success-weighted relative path lengths ↑, and optimality rates with thresholds (K = 2, 1, 0) ↑;
+                (b) thinking time (s) ↓ of the top-performing methods;
+                (c) number of LLM calls ↓ of the top-performing methods.
+                Average values are shown with standard errors.
+              </figcaption>
+            </figure>
+
+            <!-- 第二部分：Ablation Studies -->
+            <h2 class="title is-3">Ablation Studies</h2>
+            <p>
+              We conduct ablation studies to understand the contributions of core components in UniDomain.
+              Results show that removing the closed-loop verification significantly reduces atomic domain quality,
+              causing failures in solvability and task logic. Hierarchical fusion is critical, as a naive union
+              of atomic domains or direct LLM-based merging yields unusable domains due to semantic and
+              structural inconsistencies. Additionally, predicate grouping and task-relevant filtering substantially
+              boost planning performance, particularly in tasks requiring complex reasoning and compositional
+              generalization.
+            </p>
+
+            <figure>
+              <img src="static/images/ab1.jpg" alt="Ablation study on domain generation">
+              <figcaption>
+                Results for ablation studies on domain generation:
+                (a) ablation on the atomic domain learning method;
+                (b) ablation on the domain fusion method.
+                All values are success rates ↑ with standard errors.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="static/images/ab2.jpg" alt="Ablation study of the UniDomain planner">
+              <figcaption>
+                Results for ablation study of the <b>UniDomain</b> planner.
+                Each bar shows average task success rates ↑ with standard errors.
+              </figcaption>
+            </figure>
+
+          </div> <!-- .content -->
+        </div> <!-- .column -->
+      </div> <!-- .columns -->
+    </div> <!-- .container -->
+  </div> <!-- .hero-body -->
+</section>
+
+      <!-- End image carousel -->
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
