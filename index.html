@@ -131,47 +131,55 @@
 </section>
 <!-- End paper abstract -->
 
-  <!-- Paper Introduction -->
-<section class="section hero is-small">  
-
-<div class="hero-body">
-  <div class="container ">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <figure>
-            <img src="static/images/uni-domain-overview.png" alt="UniDomain Overview">
-            <figcaption>
-              <b>Overview of UniDomain.</b> In the first phase, <i>Domain Pretraining</i>, atomic PDDL domains are extracted
-              from visual-language robot demonstrations using keyframe extraction (a), VLM-based
-              domain construction, and LLM-based closed-loop refinement (b). These domains collectively
-              form a unified domain capturing broad manipulation knowledge. In the second phase, <i>Domain
-              Fusion</i> (c), task-class-relevant atomic domains are retrieved and hierarchically merged into a
-              compact meta-domain by aligning functionally-overlapping predicates and operators. In the final
-              phase, <i>Online Planning</i>, a task instruction and scene image are used to construct a grounded PDDL
-              problem (d), which is solved with a classical planner (e) using the fused meta-domain
-              to generate executable plans (f).
-            </figcaption>
-          </figure>
-
-          <p>
-            Our main contributions of this work include:
-          </p>
-
+<!-- Main contributions -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Contributions</h2>
+        <div class="content has-text-justified">
+          <p>Our main contributions of this work include:</p>
           <ul>
-            <li> The first framework to pre-train a unified PDDL domain for robotics from large-scale, real-world demonstrations. </li>
-            <li> A novel LLM-based domain fusion method for combining small, disconnected PDDL domains into a coherent and compact meta-domain thus support compositional generalization. </li>
-            <li> A novel online task planner that applies the fused meta-domain to solve general, unseen tasks through VLM-grounded PDDL planning. </li>
+            <li>The first framework to pre-train a unified PDDL domain for robotics from large-scale, real-world demonstrations.</li>
+            <li>A novel LLM-based domain fusion method for combining small, disconnected PDDL domains into a coherent and compact meta-domain that supports compositional generalization.</li>
+            <li>A novel online task planner that applies the fused meta-domain to solve general, unseen tasks through VLM-grounded PDDL planning.</li>
           </ul>
-
-
         </div>
       </div>
-    </div>
     </div>
   </div>
 </section>
 
+<!-- Paper Introduction -->
+<section class="section hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <h2 class="title is-3 has-text-centered">Overview</h2>
+
+            <figure>
+              <img src="static/images/uni-domain-overview.png" alt="Overview of UniDomain">
+              <figcaption class="has-text-justified mt-3">
+                In the learning phase, atomic PDDL domains are extracted from visual-language robot demonstrations 
+                through keyframe extraction (a), VLM-based domain construction, and LLM-based closed-loop refinement (b). 
+                These domains collectively form a unified domain capturing broad manipulation knowledge.
+                During Domain Fusion (c), task-class-relevant atomic domains are retrieved and hierarchically merged 
+                into a compact meta-domain by aligning functionally overlapping predicates and operators.
+                <br><br>
+                In the planning phase, Online Planning, a task instruction and a scene image are used to construct 
+                a grounded PDDL problem (d), which is then solved by a classical planner (e) using the fused meta-domain 
+                to produce executable plans (f).
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- Image carousel -->
@@ -198,7 +206,7 @@
             </ul>
 
             <figure>
-              <img src="static/images/baseline.jpg" alt="Comparison results of UniDomain and baselines">
+              <img src="static/images/baseline.png" alt="Comparison results of UniDomain and baselines">
               <figcaption>
                 Comparison results of <b>UniDomain</b> and state-of-the-art methods on unseen evaluation tasks:
                 (a) success rates ↑, success-weighted relative path lengths ↑, and optimality rates with thresholds (K = 2, 1, 0) ↑;
@@ -221,7 +229,7 @@
             </p>
 
             <figure>
-              <img src="static/images/ab1.jpg" alt="Ablation study on domain generation">
+              <img src="static/images/ab1.png" alt="Ablation study on domain generation">
               <figcaption>
                 Results for ablation studies on domain generation:
                 (a) ablation on the atomic domain learning method;
@@ -231,7 +239,7 @@
             </figure>
 
             <figure>
-              <img src="static/images/ab2.jpg" alt="Ablation study of the UniDomain planner">
+              <img src="static/images/ab2.png" alt="Ablation study of the UniDomain planner">
               <figcaption>
                 Results for ablation study of the <b>UniDomain</b> planner.
                 Each bar shows average task success rates ↑ with standard errors.
